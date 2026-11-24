@@ -26,7 +26,6 @@ export const AuthScreen: React.FC = () => {
     isLoading,
     error,
     clearError,
-    isCloudConnected,
   } = useAuth();
 
   const [mode, setMode] = useState<'login' | 'signup' | 'forgot'>('login');
@@ -112,12 +111,6 @@ export const AuthScreen: React.FC = () => {
             {mode === 'signup' && 'Crie sua nova conta e planeje suas finanças'}
             {mode === 'forgot' && 'Recupere o acesso à sua conta'}
           </p>
-          {!isCloudConnected && (
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/60 mt-2.5">
-              <CheckCircle2 size={12} className="text-emerald-600" />
-              Armazenamento Local Ativo
-            </span>
-          )}
         </div>
 
         {/* Feedback Messages */}
